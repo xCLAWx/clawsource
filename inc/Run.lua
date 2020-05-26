@@ -106,7 +106,7 @@ Cr_file = io.open("./inc/Token.txt", "w")
 Cr_file:write(Token)
 Cr_file:close() 
 print('\27[1;36m￤Token.txt is created.\27[m')
-local Text = "•~اهلا عزيزي [المطور الاساسي](tg://user?id="..SUDO_USER..") \n•~شكرا لاستخدامك سورس انجل \n•~أرســل  الان /start\nلاظهار الاوامر للمطور  المجهزه بالكيبورد\n\n🃏"
+local Text = "•~اهلا عزيزي [المطور الاساسي](tg://user?id="..SUDO_USER..") \n•~شكرا لاستخدامك سورس سير \n•~أرســل  الان /start\nلاظهار الاوامر للمطور  المجهزه بالكيبورد\n\n®️"
 https.request(Api_Token..'/sendMessage?chat_id='..SUDO_USER..'&text='..URL.escape(Text)..'&parse_mode=Markdown')
 os.execute([[
 rm -f ./README.md
@@ -335,7 +335,7 @@ if msg.content_.members_[0].id_ == our_id and redis:get(max..':WELCOME_BOT') the
 SUDO_USER = redis:hgetall(max..'username:'..SUDO_ID).username
 sendPhoto(msg.chat_id_,msg.id_,redis:get(max..':WELCOME_BOT'),[[•~مـرحبآ آنآ بوت آسـمـي ]]..redis:get(max..':NameBot:')..[[•~آختصـآصـي حمـآيه‌‏ آلمـجمـوعآت
 •~ مـن آلسـبآم وآلتوجيه وآلتكرآر وآلخ...
-•🃏مـعرف آلمـطـور  : ]]..SUDO_USER:gsub([[\_]],'_')..[[🌿
+.®️مـعرف آلمـطـور  : ]]..SUDO_USER:gsub([[\_]],'_')..[[🌿
 ]])
 return false
 end
@@ -551,7 +551,7 @@ end
 	
 	
 	if msg.text== 'reload' and msg.sender_user_id_ == SUDO_ID then
-	sendMsg(msg.chat_id_,msg.id_,'•~ {* تــم إعـاده تشغيل البوت  *} 🃏 \n\n•~ { Bot is Reloaded » }🃏',nil,function(arg,data)
+	sendMsg(msg.chat_id_,msg.id_,'•~ {* تــم إعـاده تشغيل البوت  *} ®️ \n\n•~ { Bot is Reloaded » }®️',nil,function(arg,data)
 	dofile("./inc/Run.lua")
 	print("Reload ~ ./inc/Run.lua")
 	end)
@@ -730,7 +730,7 @@ end
 	end
 	end
 	io.popen("rm -fr ../.telegram-cli/data/document/*")
-	sendMsg(Uploaded_Groups_CH,Uploaded_Groups_MS,'•~** تم رفع آلنسـخه‏‏ آلآحتيآطـيه\n•~** حآليآ عدد مـجمـوعآتك هيه *'..redis:scard(max..'group:ids')..'* 🃏\n✓')
+	sendMsg(Uploaded_Groups_CH,Uploaded_Groups_MS,'•~** تم رفع آلنسـخه‏‏ آلآحتيآطـيه\n•~** حآليآ عدد مـجمـوعآتك هيه *'..redis:scard(max..'group:ids')..'* ®️\n✓')
 	end
 	elseif data.ID == "UpdateUser" then  
 	if data.user_.type_.ID == "UserTypeDeleted" then
